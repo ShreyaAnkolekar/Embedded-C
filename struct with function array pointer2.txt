@@ -1,0 +1,71 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+
+typedef struct
+{
+    char name[100];
+    char surname[100];
+    int byear;
+    int gyear;
+}student;
+
+//void result(student *student1);
+
+int main()
+{
+   /* student *arr=student1;
+    char *ptr=&arr;
+    ptr=*student; */
+    
+   /* student arr[200];
+    student *arrptr=&arr;
+    student arrptr=structdata; */
+    
+    
+    student **arrptr, *arr[100];
+    arrptr=arr;
+    
+    
+   
+    student student1 = {"Shreya", "Ankolekar", 1990, 2007};
+   student student2 = {"Pratyush", "Valluri", 1989, 2007} ;
+   student *structdata1= &student1;
+   student *structdata2= &student2;
+    //arrptr=structdata;
+    arr[0]=structdata1;
+    arr[1]=structdata2;
+    
+    printf("Student 1 Name = %s\n gyear = %d\n", arrptr[0]->name, arrptr[0]->gyear);
+     printf("Student 2 Name = %s\n gyear = %d\n", structdata2->name, structdata2->gyear);
+    
+    //student *stud=&student1;
+    
+    //printf("Student 1 Name = %s\n Surname = %s\nbyear = %d\ngyear = %d\n", student1.name, student1.surname, student1.byear, student1.gyear);
+    //printf("Student 2 Name = %s\n Surname = %s\nbyear = %d\ngyear = %d\n", student2.name, student2.surname, student2.byear, student2.gyear);
+
+ /* if (strcmp(student1.name, "Shreya")==0)
+   {
+       result(stud);} */
+}
+
+/*void result(student *student1)
+{
+    printf("%s Loves to eat\n", student1->name);
+
+}*/

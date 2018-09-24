@@ -1,0 +1,44 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+
+typedef struct
+{
+    char name[100];
+    char surname[100];
+    int byear;
+    int gyear;
+}student;
+
+void result(student student1);
+
+int main()
+{
+    
+    int x;
+    student student1 = {"Shreya", "Ankolekar", 1990, 2007};
+    student student2 = {"Pratyush", "Valluri", 1989, 2007} ;
+    
+    //printf("Student 1 Name = %s\n Surname = %s\nbyear = %d\ngyear = %d\n", student1.name, student1.surname, student1.byear, student1.gyear);
+    //printf("Student 2 Name = %s\n Surname = %s\nbyear = %d\ngyear = %d\n", student2.name, student2.surname, student2.byear, student2.gyear);
+ 
+        
+  x=strcmp(student1.name, "Shreya");
+  printf("%d", x);
+  if (x==0)
+   {
+       result(student1);}
+}
+
+void result(student student1)
+{
+    printf("%s Loves to eat\n", student1.name );
+
+}
