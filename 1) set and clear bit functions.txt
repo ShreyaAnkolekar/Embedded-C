@@ -1,0 +1,54 @@
+/******************************************************************************
+
+                Code to Set 'n'th bit
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+void setbit(int value, int pos);
+void clearbit(int value, int pos);
+
+int main()
+{
+    int num, bit;
+    
+    
+    printf("Enter the number you want to manipulate\n");
+    scanf("%d", &num);
+    
+    printf("Enter the bit you want to set or clear\n");
+    scanf("%d", &bit);
+    
+	setbit(num, bit);
+	clearbit(num, bit);
+
+	return 0;
+    
+    
+}
+
+void setbit(int value, int pos)
+{
+
+    value=value|(1<<pos);
+    
+    printf("Your number after setting bit'th value: %d\n ", value);
+
+}
+void clearbit(int value, int pos)
+{
+	
+	value=value&~(1<<pos);
+    
+    	printf("Your number after clearing bit'th value: %d\n ", value);
+}
+
+
+
+
+
+
+
+
+
