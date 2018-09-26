@@ -1,0 +1,56 @@
+/******************************************************************************
+
+             Infinite loop to print 0-max
+             a. Using for-loop
+             b. Using while-loop
+             c. goto 
+
+*******************************************************************************/
+#include <stdio.h>
+
+
+int main() 
+{
+	int i=0;
+	char choice;
+	
+	printf("Choose which type of infinite loop you would like to check: \n a. For-loop\n b. while-loop\n c. goto");
+	scanf("%c", &choice);
+	
+	switch (choice)
+	{
+	   case 'a':
+	    printf("You are seeing an infinite for-loop") ;
+	   
+	    for( ; ; )
+	   	printf("6%d \n", i++) ;
+	   	break;
+	   	
+	   case 'b':
+	    printf("You are seeing an infinite while-loop") ;
+	   
+	    while(i>=0)
+	   	printf("6%d \n", i++) ;
+	   	break;
+	   	
+	   case 'c':
+	    printf("You are seeing an infinite for loop") ;
+	   
+		Infinite_Loop:
+	   	printf("6%d \n", i) ;
+		goto Infinite_Loop;
+	   	break;
+	   	
+	   	default:
+	    printf("Enter choice a, b or c.") ;
+	   	break;
+	   	
+	}
+	
+}	
+	
+	
+	
+	
+	
+	

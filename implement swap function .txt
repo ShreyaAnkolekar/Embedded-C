@@ -1,0 +1,92 @@
+/******************************************************************************
+                 Swap int, char and string 
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int intSwap(int *Ione, int *Itwo);
+char charSwap(char *charA, char *charB);
+void strSwap(char *Sone, char *Stwo);
+
+int main() 
+{
+	int intA,  intB;
+	char charA, charB, strA[1000], strB[1000], choice;
+    
+    printf("Choose what datatype you want to swap:\n a. INTEGER\n b. CHARACTER \n c. STRING \n");
+	scanf("%c",&choice);
+	getchar();
+	
+	switch (choice)
+	{
+	   case 'a':
+	    printf("What two values would you like to swap? \n");
+	    scanf("%d %d", &intA, &intB);
+	    
+	    intSwap(&intA, &intB);
+	  
+	   	printf("Swapped INTEGER values are \n intA = %d  intB = %d \n", intA, intB) ;
+	   	break;
+	   	
+	  case 'b':
+	    printf("Enter values to be Swapped\n");
+	    
+	    charA=getchar();
+	    charB=getchar();
+	    
+	    
+	    printf("A = %c  B = %c \n", charA, charB);
+	    charSwap(&charA, &charB);
+	  
+	   	printf("Swapped CHARACTER values are \n charA = %c  charB = %c \n", charA, charB) ;
+	   	break;
+	   	
+	   case 'c':
+	    printf("Enter two strings you would like to compare: \n") ;
+//	scanf("%s %s", strA, strB);
+		gets(strA);
+		gets(strB); 
+		
+		strSwap(strA, strB);
+		
+		//printf("strA=%s and strB=%s", *strA, *strB);
+	   	break;
+	   	
+	   	default:
+	    printf("Enter choice a, b or c.") ;
+	   	break;
+	   	
+	}
+}	
+
+int intSwap(int *Ione, int *Itwo)
+{
+   	int temp; 
+    
+    temp=*Ione;
+    *Ione=*Itwo;
+    *Itwo=temp;
+    
+}
+
+char charSwap(char *Cone, char *Ctwo)
+{
+   	char temp; 
+    
+    temp=*Cone;
+    *Cone=*Ctwo;
+    *Ctwo=temp;
+    
+}
+
+void strSwap(char *Sone, char *Stwo)
+{
+   	char *temp; 
+    
+    temp=Sone;
+    Sone=Stwo;
+    Stwo=temp;
+    printf("strA=%s and strB=%s", Sone, Stwo);
+    
+}

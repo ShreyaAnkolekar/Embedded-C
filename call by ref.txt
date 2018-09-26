@@ -1,0 +1,37 @@
+/******************************************************************************
+                 Call by Value and Call by ref 
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+
+int add(int *one, int *two);
+
+int main() 
+{
+	int sValue, sRef;
+	int a=2, b=4;
+
+	
+	
+	printf("Enter a and b:\n");
+	scanf("%d %d",&a, &b);
+	
+	printf("your values are a = %d, b= %d \n", a, b);
+		sValue=add(&a, &b);
+		printf("your values are a = %d, b= %d \n", a, b);
+	printf(" Call by value sValue =%d ", sValue);
+
+	
+	//printf(" Call by reference sum = ");
+//	sRef=add(*a, *b);
+}	
+
+int add(int *one, int *two)
+
+{
+    int c=0;
+    *one=*one+*two;
+    printf("sum = %d", c);
+    return c;
+}
+

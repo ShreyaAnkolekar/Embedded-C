@@ -1,0 +1,123 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+
+CODE TO 
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+
+#define MAXLINES 5000
+
+char *lineptr[MAXLINES];
+
+int readlines (char *lineptr[], int nlines);
+void writelines (char *lineptr[], int nlines);
+void swap_Shreya (char *v, int i, int j); 
+
+void qsort(char *lineptr[], int left, int right);
+
+main ()
+{
+  int nlines;
+  if ((nlines = readlines (lineptr, MAXLINES)) >= 0)
+    {
+      qsort (lineptr, 0, nlines - 1);
+      writelines (lineptr, nlines);
+      return 0;
+    }
+  else
+    {
+      printf ("error: input too big to sort\n");
+      return 1;
+    }
+}
+
+#define MAXLEN 1000		/* max length of any input line */
+int getline (char *, int);
+char *alloc (int);
+int readlines (char *lineptr[], int maxlines)
+{
+  int len, nlines;
+  char *p, line[MAXLEN];
+  nlines = 0;
+  while ((len = getline (line, MAXLEN)) > 0)
+    if (nlines >= maxlines || (p = alloc(len)) == NULL)
+      return -1;
+    else
+      {
+	line[len - 1] = '\0';	/* delete newline */
+	strcpy (p, line);
+	lineptr[nlines++] = p;
+      }
+  return nlines;
+}
+
+void
+writelines (char *lineptr[], int nlines)
+{
+  int i;
+  for (i = 0; i < nlines; i++)
+    printf ("%s\n", lineptr[i]);
+}
+
+
+int
+getline (char s[], int lim)
+{
+  int c, i;
+  for (i = 0; i < lim - 1 && (c = getchar ()) != EOF && c != '\n'; ++i)
+    s[i] = c;
+  if (c == '\n')
+    {
+      s[i] = c;
+      ++i;
+    }
+  s[i] = '\0';
+  return i;
+}
+
+void qsort (char v[], int left, int right) 
+{
+    int i, last; 
+    
+    if (left >= right)	/* do nothing if array contains */
+	  return;	/* fewer than two elements */
+	swap (*v, left, (left + right) / 2);	/* move partition elem */
+					   last = left;	/* to v[O] */
+					   for (i = left + 1; i <= right; i++)	/* partition */
+					  
+					  if (strcmp(&v[i], &v[left]) < 0)
+                            swap_Shreya(v, ++last, i);
+                            swap_Shreya(v, left, last);
+                            qsort(v, left, last-1);
+                            qsort(v, last+1, right);
+			
+}
+
+void swap_Shreya(char *v, int i, int j)
+{
+  char *temp;
+  
+  *temp = v[i];
+  v[i] = v[j];
+  v[j] = *temp;
+
+}
+
+/*
+    int strcmp(char *s, char *t)
+    {
+     for ( ; *s == *t; s++, t++)
+        if (*s == '\0' )
+        return 0;
+    return *s - *t;
+    }*/ 
+    
+    
+    
+    

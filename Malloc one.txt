@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+int main()
+{
+//char arr[10] = { 1,2,3,4,5,6,7,8 };
+char i, *ptr;
+
+ptr = malloc(sizeof(char)*10);
+
+
+
+
+//printf("%p\n", *ptr);
+//printf("Address%p Value %d  adress2 %p value2 %d\n", arr, arr[0], &arr[1], arr[1]);
+
+for(i=0; i<10; i++)
+{
+    *ptr = i;
+    
+    /*printf("piointer Address: %p Pointer values: %d \n", &arr[i], arr[i]);*/
+    printf("Pointer values: %d \n", *ptr);
+    ptr++;
+    
+}
+return 0;
+}

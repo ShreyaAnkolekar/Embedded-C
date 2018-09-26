@@ -1,0 +1,45 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char s[100];
+    char *p, *k;
+    int len, cha;
+    
+    printf("Enter String to be checked:");
+    scanf("%s", s);
+    
+    p=&s;
+
+  cha=42;
+    len=strlen(s);
+    
+    
+        k=p+len-1;
+        
+    while(*p!='\0')
+    {  
+        if(p==k)
+        break;
+        if(*p!=*k)
+        {
+                printf("Not a palindrome");
+                return;
+        }
+        p++;
+        k--;
+        
+    }
+    
+    printf("It is a Palindrome");
+    
+}

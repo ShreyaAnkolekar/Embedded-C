@@ -1,0 +1,69 @@
+/******************************************************************************
+
+                Code to Set 'n'th bit
+
+*******************************************************************************/
+
+#include <stdio.h>
+#include <math.h>
+
+	typedef unsigned char   Uchar_64;
+	typedef unsigned short  Ushort_64;
+	typedef unsigned long   Ulong_64;
+	typedef unsigned int    Uint_64;
+	typedef signed char     Schar_64;
+	typedef signed short    Sshort_64;
+	typedef signed long     Slong_64;
+	typedef signed int      Sint_64;
+	typedef float           Float_64;
+	typedef double          Double_64;
+
+int main()
+{
+    int Limits;
+    
+    Limits=pow(2,sizeof(Uchar_64)*8);
+    printf("Size of unsigned char=%d \t Range: %d to %d \n", sizeof(Uchar_64), 0, Limits-1 );
+    
+    
+    Limits=pow(2,sizeof(Ushort_64)*8);
+    printf("Size of unsigned short=%d \t Range: %d to %d \n", sizeof(Ushort_64), 0, Limits-1 );
+    
+    
+    Limits=pow(2,sizeof(Ulong_64)*8);
+    printf("Size of unsigned long=%d \t Range: %d to %d \n", sizeof(Ulong_64), 0, Limits-1 );
+    
+    
+    Limits=pow(2,sizeof(Uint_64)*8);
+    printf("Size of unsigned int=%d \t Range: %d to %d \n\n", sizeof(Uint_64), 0, Limits-1 );
+    
+   
+   
+   
+   
+   
+   
+       
+    Limits=pow(2,(sizeof(Schar_64)*8)-1);
+    printf("Size of signed char=%d \t Range: -%d to %d \n", sizeof(Schar_64), Limits, Limits-1 );
+    
+    
+    Limits=pow(2,(sizeof(Sshort_64)*8)-1);
+    printf("Size of signed short=%d \t Range: -%d to %d \n", sizeof(Sshort_64), Limits, Limits-1 );
+   
+   
+    Limits=pow(2,(sizeof(Slong_64)*8)-1);
+    printf("Size of signed long=%d \t Range: -%d to %d \n", sizeof(Slong_64), Limits, Limits-1 );
+    
+    Limits=pow(2,(sizeof(Sint_64)*8)-1);
+    printf("Size of signed int= %d \t Range: -%d to %d \n", sizeof(Sint_64), Limits, Limits-1 );
+    
+    
+       Limits=sizeof(Float_64);
+    printf("Size of unsigned int=%d \t Range: %d to %d \n\n", sizeof(Float_64), 0, Limits-1 );
+   
+   
+   
+}
+
+

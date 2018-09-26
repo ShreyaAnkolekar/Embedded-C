@@ -1,0 +1,23 @@
+/******************************************************************************
+                 Code to dynamically allocate memory and initialize 0-1000 
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int main() 
+{
+	char *MemAllocPtr;
+	int i;
+	
+	MemAllocPtr = malloc(sizeof(char)*1001);
+	
+	for(i=0; i<=1000; i++)
+	{
+	 *MemAllocPtr = i;
+	printf("Memory %p is initialized to %p \n", MemAllocPtr++, *MemAllocPtr) ;
+	
+	}
+	
+}	

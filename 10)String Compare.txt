@@ -1,0 +1,34 @@
+/******************************************************************************
+                 Function to reverse string
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() 
+{
+	int i, lenStr, j, lenrevStr;
+	char str[1000], revStr[1000];
+    
+    printf("Enter string to be reversed:\n");
+    gets(str);
+    gets(revStr);
+    
+    lenStr=strnlen(str);
+    lenrevStr=strnlen(revStr);
+    
+    if(lenStr==lenrevStr)
+    {
+        for(i=0; i<=lenStr-1; i++)
+        {
+            if(revStr[i]==str[i])
+            {
+                printf("Strings match!\n");
+                return;
+            }
+        }
+    }
+    printf("Strings dont match! \n");
+
+    
+}
